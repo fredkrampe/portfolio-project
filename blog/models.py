@@ -7,7 +7,15 @@ from django.utils.timezone import now
 class Blog(models.Model):
 
      image = models.ImageField(upload_to='images/')
-     Title = models.CharField(max_length=100)
+     title = models.CharField(max_length=100)
      publicationDate = models.DateField(default=now)
      body = models.TextField()
 
+     def __str__(self):
+          return self.title
+          
+     def summary(self):
+          return self.body[:100]
+     
+     def pub_date(self):
+          return self.publicationDate.strftime('%b %e %Y')
