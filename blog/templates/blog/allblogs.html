@@ -68,7 +68,7 @@
         <div class="card-body">
           <H4 class="card-text">{{ blog.pub_date }}</H4>
           <p class="card-text">{{ blog.body|truncatewords:"20" }}</p>
-          <a href="#" class="btn btn-primary">Read</a>
+          <a href="{% url 'detail' blog.id %}" class="btn btn-primary">Read</a>
         </div>
       </div>
 
